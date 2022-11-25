@@ -7,13 +7,13 @@ const dbService = require("../database");
  * @param {http.IncomingMessage} req - the request object
  * @param {http.ServerResponse} res - the response object
  */
-function serveHomepage(req, res) {
+function serveAboutpage(req, res) {
   //Generate the page html
   //const db = dbService.getDbServiceInstance();
   //const result = db.getAllData();
   //console.log(result);
 
-  var html = templates["home.html"]({
+  var html = templates["about.html"]({
     name: "SocraQ",
   });
   // Serve the HTML
@@ -22,4 +22,4 @@ function serveHomepage(req, res) {
   res.end(html);
 }
 
-module.exports = serveHomepage;
+module.exports = serveAboutpage;

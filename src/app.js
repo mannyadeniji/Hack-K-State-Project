@@ -5,6 +5,7 @@ const path = require("path");
 const express = require("express");
 const morgan = require("morgan");
 const serveHomepage = require("./endpoints/serveHomepage");
+const serveAboutpage = require("./endpoints/serveAboutpage");
 const submitText = require("./endpoints/submitText");
 const submitLink = require("./endpoints/submitLink");
 const processQuestion = require("./endpoints/processQuestion");
@@ -20,6 +21,7 @@ app.use(morgan("dev"));
 //app.use(loadSession);
 
 app.get("/", serveHomepage);
+app.get("/about", serveAboutpage);
 app.post("/submitLink", parseBody, submitLink);
 app.post("/submitText", parseBody, submitText);
 app.post("/processQuestion", parseBody, processQuestion);
