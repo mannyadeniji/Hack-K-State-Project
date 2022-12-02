@@ -8,6 +8,7 @@ block content
         div(class="col-1")
         div(class="col")
           form(action="/processQuestion" method="POST")
+            input(type="hidden" name="IdForLastText" value="#{textid}")
             div(class="mb-3")
                 input(type="text"
                     id="disabledTextInput"

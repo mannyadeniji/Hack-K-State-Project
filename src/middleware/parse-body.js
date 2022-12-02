@@ -18,11 +18,12 @@ function loadBody(req, res, next) {
 
   // listen for end events
   req.on("end", () => {
-    var data = Buffer.concat(chunks);
+    var data = Buffer.concat(chunks); //binary data
     var encoding = req.headers["content-type"];
+    //Diferent types of encoding
     switch (encoding.split(";")[0]) {
       case "application/x-www-form-urlencoded":
-        req.body = querystring.parse(data.toString());
+        req.body = querystring.parse(data.toString()); //turns into javascript object
         next();
         break;
       case "multipart/form-data":

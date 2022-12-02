@@ -74,10 +74,11 @@ class Dbservice {
         const query = "INSERT INTO qatable (Text) VALUES (?);";
         connection.query(query, [text], (err, result) => {
           if (err) reject(new Error(err.message));
-          resolve(result.insertId);
+          else resolve(result.insertId); //otherwise runs both lines
         });
       });
-      console.log(insertId);
+      //console.log(insertId);
+      return insertId;
     } catch (error) {
       console.log(error);
     }
