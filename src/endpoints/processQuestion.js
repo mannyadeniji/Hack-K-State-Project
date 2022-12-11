@@ -2,6 +2,7 @@ const templates = require("../templates.js");
 const dbService = require("../database");
 var associatedText = "";
 
+//Asynchronous Function because db.getPieceOfData uses a promise
 async function processQuestion(req, res) {
   const db = dbService.getDbServiceInstance();
 
@@ -9,7 +10,7 @@ async function processQuestion(req, res) {
   //console.log(req.body.question);
 
   const question = req.body.question;
-  const result = await db.getPieceOfData();
+  const result = await db.getPieceOfData(); //Stops processing code in the module until result is returned
   var associatedText = "";
   //console.log("Hey you " + result);
   var html = templates["questions.html"]({});
