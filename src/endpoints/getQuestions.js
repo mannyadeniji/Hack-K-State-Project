@@ -11,7 +11,7 @@ async function getQuestions(req, res) {
 
   console.log(result);
   res.setHeader("Content-Type", "application/json");
-  res.end();
+  res.end(result);
   //console.log("What is your name " + associatedText);
 }
 

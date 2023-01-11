@@ -1,4 +1,5 @@
 //const db = require("../database");
+//import fetch from "node-fetch";
 const templates = require("../templates.js");
 const dbService = require("../database");
 
@@ -7,11 +8,14 @@ const dbService = require("../database");
  * @param {http.IncomingMessage} req - the request object
  * @param {http.ServerResponse} res - the response object
  */
-function serveHomepage(req, res) {
-  //Generate the page html
-  //const db = dbService.getDbServiceInstance();
-  //const result = db.getAllData();
-  //console.log(result);
+async function serveHomepage(req, res) {
+  const db = dbService.getDbServiceInstance();
+  const result = await db.getAllData();
+  loadHTMLTable(result);
+  /*fetch("http://localhost:3000/getQuestions", {
+    method: "POST",
+    body: result,
+  }).then(console.log("Done"));*/
 
   var html = templates["home.html"]({
     name: "SocraQ",
@@ -21,5 +25,7 @@ function serveHomepage(req, res) {
   res.setHeader("Content-Length", html.length);
   res.end(html);
 }
+
+function loadHTMLTable(data) {}
 
 module.exports = serveHomepage;

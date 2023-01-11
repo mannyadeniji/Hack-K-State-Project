@@ -1,10 +1,10 @@
 //const dotenv = require("dotenv");
 //dotenv.config();
-//const dbService = require("../database");
+const dbService = require("../database");
 
 //const { response } = require("../src/app");
 
-document.addEventListener("DOMContentLoaded", async function () {
+/*document.addEventListener("DOMContentLoaded", async function () {
   fetch("http://localhost:3000/getQuestions", {
     credentials: "include",
     headers: {
@@ -22,8 +22,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     .catch((error) => {
       console.log(error);
     });
-});
+});*/
 
-function loadHTMLTable(data) {
-  console.log(data);
-}
+document.addEventListener("DOMContentLoaded", async function (req, res) {
+  const db = dbService.getDbServiceInstance();
+  const result = await db.getPieceOfData();
+  console.log(result);
+  console.log("hello whats up");
+});
