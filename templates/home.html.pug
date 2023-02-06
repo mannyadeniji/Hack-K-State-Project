@@ -8,29 +8,35 @@ block content
                     h1(class="text-orange") Welcome
                     p As a soceity we are in an important crossroads. We are more inconnected as a society but technology also creates the individuality and echo chambers. In order to resolve this issue, SocraQ aims to create a QA agent that takes a news article you are curious about and answers any questions you have about it
                 img(src="./IconSocrates.png" class="opacity-50 rounded w-50 d-none d-md-block")
-    div(class="container text-center")
+    div(class="container text-center carousel slide" id="myslider" data-ride="carousel")
         div(class="row")
             h1(id="Article") Article
         div(class="row")
-            div(class="row p-3")
-            form(class="container" action="/submitLink" method="POST")
-                div(class="d-grid d-md-flex justify-content-end")
-                    input(class="form-control me-4"
-                        type="search"
-                        placeholder="Enter a Link to an Article...."
-                        aria-label="Search"
-                        name="link")
-                    button(class="btn btn-outline-success me-2" type="submit") Search
-            div(class="row p-3")
-            form(class="container" action="/submitText" method="POST")
-                textarea(class="form-control row pl-4"
-                        id="exampleFormControlTextarea1"
-                        rows="5"
-                        placeholder="If no link to the article, please provide text of the article.... "
-                        name="fullText")
-                div(class="p-3 d-grid d-md-flex justify-content-end")
-                    button(class="btn btn-outline-success" type="submit") Upload
-        div(class="container text-center")
+            div(class="carousel-inner")
+                div(class="row p-3 carousel-item active")
+                    form(class="container" action="/submitLink" method="POST")
+                        div(class="d-grid d-md-flex justify-content-end")
+                            input(class="form-control me-4"
+                                type="search"
+                                placeholder="Enter a Link to an Article...."
+                                aria-label="Search"
+                                name="link")
+                            button(class="btn btn-outline-success me-2" type="submit") Search
+                div(class="carousel-inner")
+                    div(class="row p-3 carousel-item")
+                        form(class="container" action="/submitText" method="POST")
+                            textarea(class="form-control row pl-4"
+                                    id="exampleFormControlTextarea1"
+                                    rows="5"
+                                    placeholder="If no link to the article, please provide text of the article.... "
+                                    name="fullText")
+                            div(class="p-3 d-grid d-md-flex justify-content-end")
+                                button(class="btn btn-outline-success" type="submit") Upload
+            a(class="carousel-control-prev" href="#myslider" role="button" data-slide="prev")
+                span(class="carousel-control-prev-icon" aria-hidden="true")
+            a(class="carousel-control-next" href="#myslider" role="button" data-slide="next")
+                span(class="carousel-control-next-icon" aria-hidden="true")
+    div(class="container text-center")
         table(id="textTable")
 
     script(src="./makeTable.js")

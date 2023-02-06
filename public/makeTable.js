@@ -44,10 +44,16 @@ function loadHTMLTable(data) {
       const string = String(IDs[key]);
       let cell = row2.insertCell();
       var text = string.substring(0, 45);
-      let sometext = document.createTextNode(text);
       cell.style.border = "1px solid black";
+      let sometext = document.createTextNode(text);
       cell.appendChild(sometext);
     }
+    let cell2 = row2.insertCell();
+    var button = document.createElement("button");
+    var buttonText = document.createTextNode("Ask Me Anything!!!");
+    button.appendChild(buttonText);
+    cell2.style.border = "1px solid black";
+    cell2.appendChild(button);
   });
 
   let thead = table.createTHead();
@@ -60,4 +66,9 @@ function loadHTMLTable(data) {
     th.style.border = "1px solid black";
     row.appendChild(th);
   }
+  let th2 = document.createElement("th");
+  let btntext = document.createTextNode("Choose Text");
+  th2.appendChild(btntext);
+  th2.style.border = "1px solid black";
+  row.appendChild(th2);
 }
