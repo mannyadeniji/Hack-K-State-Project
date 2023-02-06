@@ -9,10 +9,12 @@ async function processQuestion(req, res) {
   console.log("You just submitted a question");
   //console.log(req.body.question);
 
-  const question = req.body.question;
-  const result = await db.getPieceOfData(); //Stops processing code in the module until result is returned
-  var associatedText = "";
-  //console.log("Hey you " + result);
+  if (req.body !== undefined) {
+    const question = req.body.question;
+    const result = await db.getPieceOfData(); //Stops processing code in the module until result is returned
+    var associatedText = "";
+  }
+
   var html = templates["questions.html"]({});
   // Serve the HTML
   res.setHeader("Content-Type", "text/html");

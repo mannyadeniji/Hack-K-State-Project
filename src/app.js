@@ -26,7 +26,7 @@ app.get("/about", serveAboutpage);
 app.post("/submitLink", parseBody, submitLink);
 app.post("/submitText", parseBody, submitText);
 app.post("/processQuestion", parseBody, processQuestion);
-app.get("/processQuestion", serveHomepage);
+app.get("/processQuestion", processQuestion);
 app.get("/getQuestions", getQuestions);
 //app.set('templates', path.join(__dirname, 'templates'));
 //app.set('template engine', 'pug');
