@@ -3,7 +3,7 @@ extends /index.html.pug
 block content
     div(class="container p-5")
       div(class="row text-center")
-        h1 About us
+        h1 About Me
       div(class="container")
         div(class="d-md-flex align-items-center")
           div(class="p-5")
@@ -16,24 +16,30 @@ block content
               people. SocraQ is an attempt at that The final aim of Socraq is to build an interactive 
               chat agent that helps users better understand news and context behind different news articles
           img(src="./AboutPagePicture.png" class="rounded mx-auto d-block w-50" width="200" height="400")
-    section(class="bg-secondary text-light p-5 text-center")
-        h1 Technical Skills 
-        div(class="container")
-          div(class="row align-items-center")
-            div(class="col-sm img-fluid p-5")
-              img(src="CSharpIcon.png" class="rounded w-50")
-            div(class="col-sm img-fluid p-5 ")
-              img(src="GithubIcon.png" class="rounded w-50") 
-            div(class="col-sm img-fluid p-5")
-              img(src="JavaIcon.png" class="rounded w-50")
-          div(class="row align-items-center")
-            div(class="col-sm img-fluid p-5")
-              img(src="JavaScriptIcon.png" class="rounded w-50") 
-            div(class="col-sm img-fluid p-5")
-              img(src="NodeJsIcon.png" class="rounded w-50") 
-            div(class="col-sm img-fluid p-5")
-              img(src="pugjsicon.png" class="rounded w-50")
-            
+    div(class="container-fluid remove-all-margin")
+      div(class="row")
+        div(class="col repos")
+          h1(class="text-dark text-center") Github Projects
+          input(type="text" class="filter-repos hide" placeholder="Search Projects")
+          ul(class="repo-list")
+        div(class="col bg-dark text-light text-center rounded")
+          h1 Technical Skills
+          div(id="carousel")
+            div(class="carousel slide" data-bs-ride="carousel") 
+              div(class="carousel-inner")
+                div(class="col-sm img-fluid p-5 carousel-item active" data-bs-interval="5000")
+                  img(src="CSharpIcon.png" class="rounded w-50")
+                div(class="col-sm img-fluid p-5 carousel-item" data-bs-interval="5000")
+                  img(src="GithubIcon.png" class="rounded w-50") 
+                div(class="col-sm img-fluid p-5 carousel-item" data-bs-interval="5000")
+                  img(src="JavaIcon.png" class="rounded w-50")
+                div(class="col-sm img-fluid p-5 carousel-item" data-bs-interval="5000")
+                  img(src="JavaScriptIcon.png" class="rounded w-50") 
+                div(class="col-sm img-fluid p-5 carousel-item" data-bs-interval="5000")
+                  img(src="NodeJsIcon.png" class="rounded w-50") 
+                div(class="col-sm img-fluid p-5 carousel-item" data-bs-interval="5000")
+                  img(src="pugjsicon.png" class="rounded w-50")
+          
             
              
              
